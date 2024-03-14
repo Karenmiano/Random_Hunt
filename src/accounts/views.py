@@ -9,8 +9,8 @@ accounts_bp = Blueprint("accounts", __name__)
 
 @accounts_bp.route("/register", methods=["GET", "POST"])
 def register():
-    if current_user.is_authenticated:
-        return render_template("home.html")
+    # if current_user.is_authenticated:
+    #     return render_template("home.html")
     form = RegistrationForm()
     if form.validate_on_submit():
         new_user = User(email=form.email.data, password=form.password.data)

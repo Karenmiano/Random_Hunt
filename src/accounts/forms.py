@@ -16,28 +16,21 @@ class RegistrationForm(FlaskForm):
         "Password", validators=[DataRequired(), Length(min=6, max=25)]
     )
     confirm_password = PasswordField(
-        "Repeat Password",
-        validators=[
-            DataRequired(),
-            EqualTo("password", message="Passwords must match")
-        ]
+        "Confirm Password", validators=[DataRequired()]
     )
 
     def validate(self, extra_validators=None):
         """Automatically called when form is submitted"""
         initial_validation = super(RegistrationForm, self).validate()
-        print(self.email.errors)
-        print(self.password.errors)
-        print(self.confirm_password.errors)
-        print(initial_validation)
         if not initial_validation:
             return False
         user = User.query.filter_by(email=self.email.data).first()
         if user:
-            self.email.errors.append("Email already registered")
+            self.email.errors.append("An account with this email already exists.")
             return False
         if self.password.data != self.confirm_password.data:
-            self.confirm_password.errors.append("Passwords must match")
+            self.password.errors.append("Passwords must match!")
+            self.confirm_password.errors.append("Passwords must match!")
             return False
         return True
 
