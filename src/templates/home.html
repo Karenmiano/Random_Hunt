@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<section class="flex flex-col min-h-screen text-white bg-center bg-cover bg-blend-overlay bg-fixed bg-black/2" style="background-image: url('static/images/boat.jpg')">
+  <div class="px-5 flex justify-end">
+    <nav class="flex gap-14 h-20 items-center">
+      <a>Home</a>
+      <a>Login</a>
+      <a href="{{ url_for('accounts.register') }}">Signup</a>
+    </nav>
+  </div>
+
+  <div class="flex-1 flex items-center">
+    <div class="text-center mx-auto">
+      <h1 class="text-5xl font-semibold">Finding Mimo</h1>
+      <p class="font-light text-3xl mt-5">The land of opportunity.</p>
+      <a class="px-5 py-2 inline-block bg-cyan-500 text-white hover:bg-cyan-400 transition-colors mt-10" href="">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section class="h-64 bg-[#271022] "></section>
+{% endblock %}
