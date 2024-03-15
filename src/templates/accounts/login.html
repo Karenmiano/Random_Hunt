@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<body class="w-full h-full bg-gradient-to-l from-indigo-500 via-purple-500 to-pink-500">
+    <div class="max-w-xl md:mx-auto mx-5 bg-white shadow-2xl rounded-lg h-96 md:mt-52 mt-40">
+        
+        <div class="text-center py-5">
+            <h1 class="text-lg font-semibold tracking-wide mb-2">SIGN IN</h1>
+        </div>
+        
+        <form role="form" method="post" actions="{{ url_for('accounts.login') }}">
+            {{ form.csrf_token }}
+            <div class="text-center mx-20">
+                
+                {{ form.email(placeholder="Email", class="w-full py-3 rounded-md shadow-2xl mb-6 pl-5") }}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        {{ error }}
+                    {% endfor %}
+                {% endif %}
+
+                <br>
+
+                {{ form.password(placeholder="Password", class="w-full py-3 rounded-md shadow-2xl mb-6 pl-5") }}
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        {{ error }}
+                    {% endfor %}
+                {% endif %}
+
+                <br>
+
+                <input type="submit" value="SUBMIT" class="text-sm font-semibold bg-pink-600 py-2 px-3 rounded-md text-white hover:bg-indigo-600 mb-4">
+
+                <br>
+
+                <h1 class="">Don't have an account?<a href="{{ url_for('accounts.register') }}" class="text-sm font-medium text-indigo-600"> Register</a></h1>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}
