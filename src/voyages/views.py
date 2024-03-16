@@ -6,6 +6,7 @@ from src.models.files import user_files_read, File
 
 voyages_bp = Blueprint("voyages", __name__)
 
+
 @voyages_bp.route("/displays")
 @login_required
 def displays():
@@ -13,9 +14,10 @@ def displays():
     Route for choosing the content to display to user
     """
     seen_pages_ids = db.session.query(user_files_read.c.file_id) \
-                        .filter(user_files_read.c.user_id == current_user.id).subquery()
+                     .filter(user_files_read.c.user_id == current_user.id) \
+                     .subquery()
     random_page = File.query.filter(File.id.notin_(seen_pages_ids)) \
-                   .order_by(func.random()).first()
+                  .order_by(func.random()).first()
     if random_page:
         current_user.files.append(random_page)
         db.session.commit()
