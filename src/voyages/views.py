@@ -9,9 +9,13 @@ voyages_bp = Blueprint("voyages", __name__)
 @voyages_bp.route("/displays")
 @login_required
 def displays():
-    seen_pages = db.session.query(user_files_read).filter_by(user_id=current_user.id).all()
-    seen_pages_id = [row.file_id for row in seen_pages]
-    random_page = File.query.filter(File.id.notin_(seen_pages_id)).order_by(func.random()).first()
+    """
+    Route for choosing the content to display to user
+    """
+    seen_pages_ids = db.session.query(user_files_read.c.file_id) \
+                        .filter(user_files_read.c.user_id == current_user.id).subquery()
+    random_page = File.query.filter(File.id.notin_(seen_pages_ids)) \
+                   .order_by(func.random()).first()
     if random_page:
         current_user.files.append(random_page)
         db.session.commit()
