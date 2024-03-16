@@ -24,20 +24,20 @@ def register():
         login_user(new_user)
         flash("You are now a registered user. Welcome!")
         # will be function to start the application
-        return render_template("home.html")
+        return redirect(url_for("voyages.displays"))
     return render_template("accounts/register.html", title="Register", form=form)
 
 @accounts_bp.route("/login", methods=["GET", "POST"])
 def login():
     """Login existing users"""
     if current_user.is_authenticated:
-        return redirect(url_for("home"))
+        flash("You are already logged in!")
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
-            return redirect(url_for("home"))
+            return redirect(url_for("voyages.displays"))
         else:
             redirect(url_for("accounts.login"))
             # render_template("login.html", title="Login", form=form)

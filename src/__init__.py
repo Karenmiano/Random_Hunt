@@ -1,6 +1,6 @@
 from flask_bcrypt import Bcrypt
 from decouple import config
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_login import LoginManager, current_user
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -23,12 +23,14 @@ def load_user(user_id):
 
 @app.route("/")
 def home():
-    # if current_user.is_authenticated:
-    #     return "See you soon!"
+    if current_user.is_authenticated:
+        return redirect(url_for("voyages.displays"))
     return render_template("home.html", title="Home")
 
 from src.models.files import File
 
 
 from src.accounts.views import accounts_bp
+from src.voyages.views import voyages_bp
 app.register_blueprint(accounts_bp)
+app.register_blueprint(voyages_bp)

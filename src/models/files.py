@@ -30,3 +30,6 @@ class File(db.Model):
     recorded_on = db.Column(db.DateTime, default=datetime.utcnow())
     users = db.relationship('User', secondary="user_files_read",
                            backref="files", viewonly=False)
+    
+    def __repr__(self):
+        return f'Filename: {self.file_name}'
