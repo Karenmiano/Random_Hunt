@@ -3,13 +3,6 @@
 {% block content %}
 <body>
     <div class="max-w-xl mx-auto bg-white shadow-2xl rounded-lg h-auto md:w-96 w-80 md:mt-40 mt-28">
-        {% with messages = get_flashed_messages(category_filter=['success']) %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="text-green-700 mt-3">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
         <div class="text-center py-5">
             <h1 class="text-lg font-semibold tracking-wide mb-2">SIGN UP</h1>
         </div>

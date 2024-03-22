@@ -1,5 +1,6 @@
+#!/usr/bin/env python
 """
-Defines blueprint used to display pages to user.
+Defines blueprint that holds route used to display pages to user.
 """
 from flask import Blueprint, url_for, render_template, redirect
 from flask_login import login_required, current_user
@@ -14,7 +15,16 @@ voyages_bp = Blueprint("voyages", __name__)
 @login_required
 def displays():
     """
-    Route for choosing the content to display to user
+    Route for choosing the content to display to user.
+
+    The content displayed is random and mostly unique to user.
+
+    Pages already seen by user are determined from junction table
+    between user and files, then used to isolate them from all existing
+    files. The random_page is then chosen from the remaining files.
+
+    If no unseen files are found the user's seen files list is emptied to
+    allow the process to start again
     """
     seen_pages_ids = db.session.query(user_files_read.c.file_id) \
                      .filter(user_files_read.c.user_id == current_user.id) \

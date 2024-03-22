@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Defines the login and registration forms of app
 """
@@ -8,7 +9,9 @@ from src.models.user import User
 
 
 class RegistrationForm(FlaskForm):
-    """Defines entries for the registration form"""
+    """
+    Defines entries for the registration form.
+    """
     email = EmailField(
         "Email", validators=[DataRequired(), Email()]
     )
@@ -20,7 +23,10 @@ class RegistrationForm(FlaskForm):
     )
 
     def validate(self, extra_validators=None):
-        """Automatically called when form is submitted"""
+        """
+        Automatically called when form is submitted.
+        Validates the form and returns True if successful, else False.
+        """
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
             return False
@@ -36,7 +42,9 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    """Defines entries for login form"""
+    """
+    Defines entries for login form.
+    """
     email = EmailField("Email", validators=[DataRequired(), Email()])
     password = PasswordField("Password", validators=[DataRequired()])
     remember = BooleanField('Remember Me')
