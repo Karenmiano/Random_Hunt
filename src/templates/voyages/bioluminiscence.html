@@ -1,0 +1,36 @@
+{% extends "voyages/pages_base.html" %}
+{% block title %}The Luminous Life: Bioluminescence{% endblock %}
+{% block body_class %}bg-blue-50{% endblock %}
+{% block page_content %}
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <header class="mb-12">
+        <h1 class="text-4xl font-bold text-center text-blue-900 mb-4">The Luminous Life: Bioluminescence</h1>
+        <p class="text-xl text-center text-gray-700">Exploring the glowing marvel of the natural world.</p>
+    </header>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">What is Bioluminescence?</h2>
+        <p class="text-lg text-gray-600 mb-4">Bioluminescence is the production and emission of light by living organisms. It is a form of chemiluminescence where light energy is released by a chemical reaction. This remarkable phenomenon is observed in various marine organisms, such as fish, jellyfish, and microorganisms like plankton, as well as on land in creatures like fireflies and certain fungi.</p>
+        <p class="text-lg text-gray-600">The light emitted by these organisms can range in color from green, blue, to red, and serves multiple purposes from attracting prey, deterring predators, to communication among species.</p>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">The Purpose of Bioluminescence</h2>
+        <p class="text-lg text-gray-600 mb-4">What makes bioluminescence truly captivating is not just its enchanting glow but also its purpose and function in nature. For marine creatures, bioluminescence serves various roles such as attracting prey, deterring predators, or facilitating communication among species. For example, the deep-sea anglerfish uses a luminous lure that hangs from its head to attract prey in the pitch-black depths of the ocean.</p>
+        <p class="text-lg text-gray-600 mb-4">In the case of fireflies, the light patterns are used for mating rituals, where the males and females communicate through specific flashing patterns. Meanwhile, some species of fungi glow in the dark, a phenomenon believed to attract insects that can help disperse their spores.</p>
+        <p class="text-lg text-gray-600 mb-4">Bioluminescence is a brilliant example of nature's ingenuity, illustrating how life adapts to utilize light in the most shadowy environments. It's a mesmerizing spectacle that reminds us of the beauty and complexity of the natural world.</p>
+    </section>
+
+    <div class="flex justify-center mt-4">
+        <a href="{{ url_for('voyages.displays') }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-blue-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg> 
+        </a>
+    </div>
+
+    <footer class="text-center text-gray-600 mt-10">
+        The Luminous Life. AI generated.
+    </footer>
+</div>
+{% endblock %}

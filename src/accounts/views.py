@@ -22,30 +22,30 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         login_user(new_user)
-        flash("You are now a registered user. Welcome!")
-        # will be function to start the application
+        flash("Thanks for registering!", "success")
         return redirect(url_for("voyages.displays"))
     return render_template("accounts/register.html", title="Register", form=form)
 
 @accounts_bp.route("/login", methods=["GET", "POST"])
 def login():
     """Login existing users"""
-    if current_user.is_authenticated:
-        flash("You are already logged in!")
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
-            login_user(user)
+            login_user(user, remember=form.remember.data)
             return redirect(url_for("voyages.displays"))
         else:
+            flash('Invalid email and/or password', 'signin')
             redirect(url_for("accounts.login"))
-            # render_template("login.html", title="Login", form=form)
     return render_template("accounts/login.html", title="Login", form=form)
 
 @accounts_bp.route("/logout")
 @login_required
 def logout():
-    """Logout users"""
+    """
+    Logs out the current user and redirects them
+    to the home page.
+    """
     logout_user()
-    return redirect(url_for("home"))
+    return redirect(url_for("go_home"))

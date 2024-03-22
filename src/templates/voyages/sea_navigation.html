@@ -1,0 +1,46 @@
+{% extends "voyages/pages_base.html" %}
+{% block title %}Sea Navigation{% endblock %}
+{% block body_class %}bg-indigo-50{% endblock %}
+{% block page_content %}
+<div class="max-w-6xl mx-auto px-4 py-8">
+    <header class="mb-14">
+        <h1 class="text-4xl font-bold text-center text-indigo-900 mb-3">Sea Navigation</h1>
+        <p class="text-xl text-center text-gray-700 mb-3">Exploring the vast blue.</p>
+        <p class="text-lg text-gray-700">Navigating the vast, enigmatic expanse of the sea has been a quintessential human endeavor, fueling exploration, trade, and the exchange of cultures for millennia. Sea navigation, with its rich history, technological advancements, and inherent challenges, is a fascinating field that marries the precision of science with the adventurous spirit of exploration.</p>
+    </header>
+
+    <article>
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-indigo-700 mb-5">The Ancient Mariners and the Stars</h2>
+            <p class="text-lg text-gray-600 mb-6">Ancient navigators looked to the night sky, learning to read the constellations to determine their latitude and the direction they were heading. The North Star, Polaris, became a beacon for those in the Northern Hemisphere, holding a fixed position in the sky. Mariners also relied on the sun, using simple instruments like the astrolabe and later the sextant to measure its angle at noon, helping them gauge their latitude.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-indigo-700 mb-5">Solving the Longitude Puzzle</h2>
+            <p class="text-lg text-gray-600 mb-6">While latitude could be determined by celestial objects, longitude remained a daunting challenge, leading to countless tragedies at sea. The solution came in the form of the marine chronometer, a precise clock that allowed sailors to calculate their longitude by comparing the local noon to the time at a reference location, Greenwich, England. This invention was a turning point, making sea voyages far safer and more reliable.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-indigo-700 mb-5">The Age of Electronic Navigation</h2>
+            <p class="text-lg text-gray-600 mb-6">Today, sea navigation is supported by sophisticated software and digital charts, enabling navigators to plot courses with incredible accuracy. Electronic chart display and information systems (ECDIS) integrate GPS data with electronic navigational charts, offering real-time information on the ship's position, surrounding marine traffic, and potential hazards.</p>
+        </section>
+
+        <section class="mb-12">
+            <p class="text-lg text-gray-600 mb-6">At its core, sea navigation is about the spirit of exploration. It's about charting courses to unknown destinations, facing the challenges of the sea, and discovering the world's hidden corners. Careers built out of it include merchant marine officer, naval officer, yatch skipper, hydrographic surveyor etc. Sea navigation, with its blend of ancient wisdom and cutting-edge technology, stands as a testament to humanity's enduring desire to explore, understand, and connect with the vast, mysterious world that lies beyond the shores.</p>
+        </section>
+
+
+        <div class="flex justify-center mt-4">
+            <a href="{{ url_for('voyages.displays') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-indigo-900">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg> 
+            </a>
+        </div>
+
+        <footer class="text-center text-gray-600 mt-10">
+            Sea Navigation. AI generated.
+        </footer>
+    </article>
+</div>
+{% endblock %}

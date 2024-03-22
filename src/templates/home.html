@@ -2,25 +2,75 @@
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 <body>
-  <section class="flex flex-col min-h-screen text-white bg-center bg-cover bg-blend-overlay bg-fixed bg-black/2" style="background-image: url('static/images/boat.jpg')">
-    <div class="px-5 flex justify-end">
-      <nav class="flex gap-14 h-20 items-center">
-        <a>Home</a>
-        <a href="{{ url_for('accounts.login') }}">Login</a>
-        <a href="{{ url_for('accounts.register') }}">Signup</a>
-        <a href="{{ url_for('accounts.logout') }}">Logout</a>
-      </nav>
+  <section class="flex flex-col min-h-screen text-yellow-50 bg-center bg-cover bg-blend-overlay bg-black/2" style="background-image: url('static/images/ship1.jpg')">
+    <nav class="flex justify-end relative ">
+        <ul class="md:flex md:flex-row flex-col px-14 pt-4 pb-5 opacity-0 md:gap-10 md:py-5 md:px-5 md:opacity-100">
+          <li>
+            <a href="{{ url_for('go_home') }}" class="md:border-2 md:border-yellow-50 md:hover:bg-white/30 md:text-yellow-50 md:py-1 md:px-4 md:rounded-full">Home</a>
+          </li>
+          {% if current_user.is_authenticated %}
+          <li>
+            <a href="{{ url_for('accounts.logout') }}" class="md:border-2 md:border-yellow-50 md:hover:bg-white/30 md:text-yellow-50 md:py-1 md:px-4 md:rounded-full">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ url_for('accounts.login') }}" class="md:border-2 md:border-yellow-50 md:hover:bg-white/30 md:text-yellow-50 md:py-1 md:px-4 md:rounded-full">Login</a>
+          </li>
+          <li>
+            <a href="{{ url_for('accounts.register') }}" class="md:border-2 md:border-yellow-50 md:hover:bg-white/30 md:text-yellow-50 md:py-1 md:px-4 md:rounded-full">Signup</a>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="top-3 mr-4 absolute md:hidden">
+          <ion-icon name="menu" onclick="Menu(this)" class="h-8 w-9"></ion-icon>
+        </div>
+    </nav>
+    <div class="md:ml-3 ml-2">
+      <h1 id="mimo_title" class="text-5xl font-semibold"></h1>
     </div>
-
-    <div class="flex-1 flex items-center">
-      <div class="text-center mx-auto">
-        <h1 class="text-5xl font-semibold">Finding Mimo</h1>
-        <p class="font-light text-3xl mt-5">The land of opportunity.</p>
-        <a class="px-5 py-2 inline-block bg-cyan-500 text-white hover:bg-cyan-400 transition-colors mt-10" href="{{ url_for('accounts.register') }}">Get Started!</a>
-      </div>
+    <div class="ml-2 md:ml-3">
+      <p id="mimo_description" class="font-light text-3xl mt-5"></p>
+      <a id="get_started" class="inline-block invisible border-2 border-yellow-50 hover:bg-white/30 text-yellow-50 font-semibold py-2 px-4 rounded-full mt-5" href="{{ url_for('accounts.register') }}">Board ship!</a>
     </div>
   </section>
-
-  <section class="h-64 bg-[#271022] "></section>
+  <footer class="h-56 bg-[#0b373b] text-yellow-50">
+    <div class="flex flex-col py-0 px-3">
+      <a class="mt-8">About</a>
+      <a href="{{ url_for('accounts.logout') }}" class="mt-2">Logout</a>
+      <a class="mt-2">Get In Touch</a>
+      <div class="flex gap-5 mt-3">
+        <a href="https://github.com/Karenmiano/Finding_Mimo">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="rgb(254 252 232 / var(--tw-text-opacity))">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+        <a href="mailto:mianokaren1798@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-yellow-50" fill="none">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+        </a>  
+        <a href="https://twitter.com/miano_karenn">   
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mt-1" fill="rgb(254 252 232 / var(--tw-text-opacity))"><title>X</title>
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/karen-miano-572625260/">
+          <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="rgb(254 252 232 / var(--tw-text-opacity))">
+            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+          </svg>
+        </a>
+      </div>
+      <p class="flex justify-center text-gray-600 text-sm mt-7">&copy; Finding Mimo - 2024</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  <script type="text/javascript" src="static/scripts/mimo.js"></script>
+  <script>
+    function Menu(e){
+      let list = document.querySelector('ul');
+      let items = document.querySelector('li');
+      e.name === 'menu' ? (e.name = "close", list.classList.remove('opacity-0'), list.classList.add('opacity-100')): (e.name = "menu", list.classList.remove('opacity-100'), list.classList.add('opacity-0'));
+    }
+  </script>
 </body>
 {% endblock %}

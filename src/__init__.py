@@ -23,8 +23,14 @@ def load_user(user_id):
 
 @app.route("/")
 def home():
+    """Route to home page."""
     if current_user.is_authenticated:
         return redirect(url_for("voyages.displays"))
+    return render_template("home.html", title="Home")
+
+@app.route("/home")
+def go_home():
+    """Allows already authenticated users to return to home page."""
     return render_template("home.html", title="Home")
 
 from src.models.files import File

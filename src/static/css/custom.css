@@ -1,0 +1,22 @@
+:root {
+    --ti-cursor-font-weight: 300;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .white_card {
+    background-color: white;
+    height: 40%;
+    width: 30%;
+    color: black;
+  }
+  

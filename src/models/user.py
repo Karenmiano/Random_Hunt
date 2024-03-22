@@ -22,4 +22,3 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         """Changes official presentation of User instance"""
         return f'<email: {self.email}>'
-

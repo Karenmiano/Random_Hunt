@@ -1,1 +1,47 @@
-<p>About crossfit</p>
+{% extends "voyages/pages_base.html" %}
+{% block title %}CROSSFIT{% endblock %}
+{% block body_class %}bg-gray-50{% endblock %}
+{% block page_content %}
+<div class="max-w-5xl mx-auto px-4 py-5">
+    <header class="mb-10">
+        <h1 class="text-5xl font-bold text-center text-green-800 mb-3">CrossFit Chronicles</h1>
+        <p class="text-xl text-center text-gray-700">The fitness revolution.</p>
+    </header>
+
+    <article>
+        <section class="mb-10">
+            <h2 class="text-3xl font-semibold text-green-700 mb-5">What is CrossFit?</h2>
+            <p class="text-lg text-gray-600 mb-6">CrossFit is a branded fitness regimen created by Greg Glassman and Lauren Jenai in 2000. It is a registered trademark of CrossFit, Inc., which was founded to enhance an individual's overall fitness and health through high-intensity and constantly varied functional movements. CrossFit's methodology is about preparing for the unexpected, making workouts broad, general, and inclusive, suitable for any committed individual, regardless of experience.</p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-3xl font-semibold text-green-700 mb-5">The Pillars of CrossFit</h2>
+            <ul class="list-disc pl-5 text-lg text-gray-600 mb-6">
+                <li>Varied Functional Movements - Incorporating natural and essential movements from everyday life.</li>
+                <li>High Intensity - Focusing on pushing your physical and mental limits.</li>
+                <li>Community and Support - Creating an environment where encouragement and teamwork thrive.</li>
+                <li>Workouts of the Day (WODs) - Daily changing routines to challenge every aspect of fitness.</li>
+            </ul>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-3xl font-semibold text-green-700 mb-5">The Benefits and Considerations</h2>
+            <p class="text-lg text-gray-600 mb-6">CrossFit offers numerous benefits, including improved physical strength, cardiovascular health, agility, and flexibility. It also provides psychological benefits such as increased endurance, stress relief, and a sense of achievement. However, due to the high-intensity nature of the workouts, there is a risk of injury, particularly for beginners or those with pre-existing conditions. It's crucial to start with guidance from certified CrossFit trainers who can ensure proper form and tailor workouts to individual capabilities.</p>
+        </section>
+
+        <section class="mb-10">
+            <p class="text-lg text-gray-600">CrossFit stands out as a comprehensive fitness program that emphasizes strength, endurance, and community. By incorporating varied functional movements performed at high intensity, CrossFit aims to improve not just athletic performance but also the quality of life for its practitioners. With its scalability and supportive community, CrossFit offers an inclusive environment for anyone looking to enhance their fitness, regardless of their starting point.</p>
+        </section>
+        <div class="flex justify-center mt-4">
+            <a href="{{ url_for('voyages.displays') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-green-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg> 
+            </a>
+        </div>
+        <footer class="text-center text-gray-600 mt-10">
+            CrossFit Chronicles. AI generated.
+        </footer>
+    </article>
+</div>
+{% endblock %}

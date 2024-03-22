@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="{% block body_class %}{% endblock %}">
+    <nav class="flex justify-end px-5 py-4 gap-10">
+        <a href="{{ url_for('go_home') }}" class="text-gray-500 hover:text-gray-900">Home</a>
+        <a href="{{ url_for('accounts.logout') }}" class="text-gray-500 hover:text-gray-900">Logout</a>
+    </nav>
+    {% block page_content %}{% endblock %} 
+</body>
+{% endblock %}

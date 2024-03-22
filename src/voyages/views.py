@@ -1,3 +1,6 @@
+"""
+Defines blueprint used to display pages to user.
+"""
 from flask import Blueprint, url_for, render_template, redirect
 from flask_login import login_required, current_user
 from sqlalchemy.sql.expression import func

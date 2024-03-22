@@ -2,7 +2,7 @@
 Defines the login and registration forms of app
 """
 from flask_wtf import FlaskForm
-from wtforms import EmailField, PasswordField
+from wtforms import EmailField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 from src.models.user import User
 
@@ -39,3 +39,4 @@ class LoginForm(FlaskForm):
     """Defines entries for login form"""
     email = EmailField("Email", validators=[DataRequired(), Email()])
     password = PasswordField("Password", validators=[DataRequired()])
+    remember = BooleanField('Remember Me')

@@ -1,0 +1,42 @@
+{% extends "voyages/pages_base.html" %}
+{% block title %}Space Medicine{% endblock %}
+{% block body_class %}bg-orange-50{% endblock %}
+{% block page_content %}
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <header class="mb-12">
+        <h1 class="text-4xl font-bold text-center text-orange-900 mb-4">Space Medicine</h1>
+        <p class="text-xl text-center text-gray-700 mb-4">Keeping the balance in the cosmos.</p>
+        <p class="text-lg text-gray-600 mb-4">Imagine the thrill and awe of gazing at Earth from space, floating weightlessly in a spacecraft. Space exploration is the ultimate adventure, pushing the boundaries of human experience and knowledge. However, this extraordinary journey comes with unique challenges, particularly to human health.</p>
+    </header>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-orange-700 mb-4">The Birth of Space Medicine</h2>
+        <p class="text-lg text-gray-600 mb-4">The story of space medicine begins with the dawn of the Space Age in the mid-20th century. As nations dreamed of sending humans beyond Earth, it became apparent that the mysteries of space held not just wonders, but also unseen dangers. The very environment that excited our curiosity—the vacuum of space, extreme temperatures, and the absence of gravity—posed unprecedented threats to the human body.</p>
+        <p class="text-lg text-gray-600">Early space missions quickly underscored the necessity of understanding and addressing these threats. For instance, astronauts experienced space motion sickness, muscle and bone loss, and a host of other physiological changes in the absence of gravity. Moreover, the isolation and confinement of space travel presented psychological challenges. The field of space medicine was born out of the need to protect astronauts from these hazards, ensure their well-being, and enable them to perform their missions successfully.</p>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-orange-700 mb-4">Space Medicine vs Terrestial Medicine</h2>
+        <p class="text-lg text-gray-600 mb-4">Space medicine is distinct from terrestrial medicine due to the unique environment of space. Here, the absence of gravity affects every aspect of human physiology, from fluid distribution in the body to heart function and muscle strength. Astronauts are also exposed to higher levels of radiation, which can increase the risk of cancer and other health issues. The psychological impacts of living in confined spaces far from Earth, with limited communication with loved ones, add another layer of complexity.</p>
+        <p class="text-lg text-gray-600 mb-4">This specialized field combines elements of physiology, psychology, emergency medicine, and more, tailored to the conditions of space. It involves not just treating illnesses or injuries, but also developing preventive measures, such as exercise routines to combat muscle and bone loss, and strategies to address the psychological stress of space missions.</p>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-orange-700 mb-4">The Future</h2>
+        <p class="text-lg text-gray-600 mb-4">Space medicine is essential for the future of human space exploration. As we set our sights on longer missions to the many more planets beyond our galaxy, the role of space medicine becomes even more critical. It's about enabling humans not just to survive in space, but to thrive, conduct research, and explore new worlds. </p>
+        <p class="text-lg text-gray-600 mb-4">This specialized field combines elements of physiology, psychology, emergency medicine, and more, tailored to the conditions of space. It involves not just treating illnesses or injuries, but also developing preventive measures, such as exercise routines to combat muscle and bone loss, and strategies to address the psychological stress of space missions. Space medicine is at the forefront of ensuring that our interstellar aspirations can become a reality. The collaborative effort of medical professionals and researchers, engineers, psychologists, nutritionists, and many others will be essential in expanding human presence in the cosmos.</p>
+    </section>
+
+    <div class="flex justify-center mt-4">
+        <a href="{{ url_for('voyages.displays') }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-orange-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg> 
+        </a>
+    </div>
+
+    <footer class="text-center text-gray-600 mt-10">
+        Space Medicine. AI generated.
+    </footer>
+</div>
+{% endblock %}
