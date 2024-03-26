@@ -22,11 +22,11 @@ Welcome to [Finding Mimo](https://karenmiano.pythonanywhere.com/), a web-based a
 
 
 <!-- Features -->
-### Features
+## Features
 
-- **Random page generation:** pages to be displayed have been generated randomly chosen and therefore more or less unique. In addition, pages are not repeated unless the user has exhausted all the content available whereby the cycle starts over.
-- **User Account Creation:** this was necessary inorder to keep track of the pages already displayed to users. 
-- **Database nature:** there are two base tables, one for users and the other that keeps a record of the files available for display, a many to many relationship then exists between the two in order to keep track of the files already displayed to user.
+- **Random page generation:** Pages to be displayed have been generated randomly chosen and therefore more or less unique. In addition, pages are not repeated unless the user has exhausted all the content available whereby the cycle starts over.
+- **User Account Creation:** This was necessary inorder to keep track of the pages already displayed to users. 
+- **Database nature:** There are two base tables, one for users and the other that keeps a record of the files available for display, a many to many relationship then exists between the two in order to keep track of the files already displayed to user.
 
 
 ## Getting Started
@@ -93,50 +93,12 @@ function App() {
 }
 ```
 
-<!-- Roadmap -->
-## Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+### Future of Finding Mimo
+
+* **Enable bookmarking** - allow user to save articles they found interesting
 
 <!-- Contributing -->
 ## Contributing
 
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-
-<!-- Code of Conduct -->
-### Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
-
-
-<!-- License -->
-## License
-
-Distributed under the no License. See LICENSE.txt for more information.
-
-
-<!-- Contact -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
-
-<!-- Acknowledgments -->
-## Acknowledgements
-
-Use this section to mention useful resources and libraries that you have used in your projects.
-
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
+Any contributions or suggestions from anyone reading this are welcome. If you have an idea of how this could be expanded or something that you think should have been implemented in a different way do reach out.
