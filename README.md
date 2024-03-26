@@ -4,7 +4,7 @@
   <img src="screenshot2.png" alt="appscreenshot" />
 </div>
 
-Welcome to [Finding Mimo](https://karenmiano.pythonanywhere.com/), 
+Welcome to [Finding Mimo](https://karenmiano.pythonanywhere.com/), a web-based app that introduces you to the world of spontaneous learning. Discover what lies beyond the horizon one page at a time. Can't wait to see what you discover! 
 
 ## Tech Stack
 
@@ -20,43 +20,15 @@ Welcome to [Finding Mimo](https://karenmiano.pythonanywhere.com/),
 ### Database
 * MySQL
 
-<details>
-<summary>DevOps</summary>
-  <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 ### Features
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-<!-- Color Reference -->
-### Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+- **Random page generation:** pages to be displayed have been generated randomly chosen and therefore more or less unique. In addition, pages are not repeated unless the user has exhausted all the content available whereby the cycle starts over.
+- **User Account Creation:** this was necessary inorder to keep track of the pages already displayed to users. 
+- **Database nature:** there are two base tables, one for users and the other that keeps a record of the files available for display, a many to many relationship then exists between the two in order to keep track of the files already displayed to user.
 
 
-<!-- Env Variables -->
-### Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
-
-<!-- Getting Started -->
 ## Getting Started
 
 <!-- Prerequisites -->
