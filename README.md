@@ -1,7 +1,7 @@
 # Finding Mimo
 
 <div align="center"> 
-  <img src="appscreenshot.png" alt="appscreenshot" />
+  <img src="screenshot2.png" alt="appscreenshot" />
 </div>
 
 
